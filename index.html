@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>The Education | Learn Without Limits</title>
+<title>The Education | Quran Learning Academy</title>
 
 <meta name="description"
-content="The Education - Modern online learning platform with expert tutors Abdullah Shahzad and Uzair Amad.">
+content="The Education - Learn Quran online with Abdullah Shahzad and Uzair Amad.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,23 +17,8 @@ content="The Education - Modern online learning platform with expert tutors Abdu
 <style>
 
 /* =========================
-   ROOT
+   BASIC
 ========================= */
-
-:root{
-    --primary:#6c63ff;
-    --primary2:#8b5cf6;
-    --accent:#00d4ff;
-    --bg:#070914;
-    --card:rgba(255,255,255,.07);
-    --card2:rgba(255,255,255,.04);
-    --text:#ffffff;
-    --muted:#a7adc4;
-    --border:rgba(255,255,255,.12);
-    --success:#27e28b;
-    --danger:#ff5577;
-    --shadow:0 25px 80px rgba(0,0,0,.35);
-}
 
 *{
     margin:0;
@@ -42,13 +27,28 @@ content="The Education - Modern online learning platform with expert tutors Abdu
     scroll-behavior:smooth;
 }
 
+:root{
+    --bg:#06120f;
+    --bg2:#091b17;
+    --card:rgba(255,255,255,.055);
+    --card2:rgba(255,255,255,.08);
+    --green:#16c784;
+    --green2:#37e6a1;
+    --gold:#e8c66a;
+    --white:#fff;
+    --text:#edf8f4;
+    --muted:#9fb4ad;
+    --border:rgba(255,255,255,.11);
+    --shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
 body{
     font-family:Inter,sans-serif;
-    background:
-        radial-gradient(circle at 10% 10%,rgba(108,99,255,.18),transparent 30%),
-        radial-gradient(circle at 90% 20%,rgba(0,212,255,.10),transparent 25%),
-        var(--bg);
     color:var(--text);
+    background:
+    radial-gradient(circle at 10% 10%,rgba(22,199,132,.14),transparent 30%),
+    radial-gradient(circle at 90% 20%,rgba(232,198,106,.08),transparent 25%),
+    var(--bg);
     overflow-x:hidden;
 }
 
@@ -57,7 +57,10 @@ a{
     text-decoration:none;
 }
 
-button,input,select,textarea{
+button,
+input,
+select,
+textarea{
     font:inherit;
 }
 
@@ -73,40 +76,39 @@ button{
     position:fixed;
     inset:0;
     z-index:9999;
-    background:#070914;
+    background:#06120f;
     display:flex;
     justify-content:center;
     align-items:center;
     transition:.6s;
 }
 
-.loader-box{
+.loader{
     text-align:center;
 }
 
 .loader-logo{
-    width:70px;
-    height:70px;
-    border-radius:22px;
+    width:80px;
+    height:80px;
+    border-radius:25px;
     display:grid;
     place-items:center;
     margin:auto;
     font-size:30px;
     font-weight:800;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
-    box-shadow:0 0 50px rgba(108,99,255,.5);
-    animation:pulse 1.5s infinite;
+    color:#06120f;
+    background:linear-gradient(135deg,var(--gold),var(--green2));
+    box-shadow:0 0 60px rgba(22,199,132,.4);
+    animation:float 1.5s infinite;
 }
 
-.loader-box p{
+.loader p{
     margin-top:18px;
     color:var(--muted);
 }
 
-@keyframes pulse{
-    50%{
-        transform:scale(1.08);
-    }
+@keyframes float{
+    50%{transform:translateY(-8px) rotate(3deg)}
 }
 
 /* =========================
@@ -115,22 +117,21 @@ button{
 
 .navbar{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
+    top:0;
     z-index:1000;
-    padding:18px 6%;
+    padding:17px 5%;
+    background:rgba(6,18,15,.72);
     backdrop-filter:blur(20px);
-    background:rgba(7,9,20,.68);
     border-bottom:1px solid var(--border);
 }
 
-.nav-inner{
+.nav{
     max-width:1250px;
     margin:auto;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
@@ -138,46 +139,46 @@ button{
     align-items:center;
     gap:12px;
     font-family:Poppins;
-    font-size:22px;
     font-weight:800;
+    font-size:21px;
 }
 
-.logo-icon{
-    width:43px;
-    height:43px;
+.logo-box{
+    width:44px;
+    height:44px;
+    border-radius:14px;
     display:grid;
     place-items:center;
-    border-radius:14px;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
-    box-shadow:0 8px 30px rgba(108,99,255,.3);
+    color:#07130f;
+    background:linear-gradient(135deg,var(--gold),var(--green2));
 }
 
-.nav-links{
+.links{
     display:flex;
+    gap:27px;
     align-items:center;
-    gap:30px;
 }
 
-.nav-links a{
-    color:#c7cad8;
+.links a{
+    color:#b9cbc5;
     font-size:14px;
     transition:.3s;
 }
 
-.nav-links a:hover{
+.links a:hover{
     color:white;
 }
 
-.nav-btn{
+.join-btn{
     padding:12px 18px;
     border-radius:12px;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    background:linear-gradient(135deg,var(--green),#0d9f6b);
     color:white!important;
 }
 
 .menu{
     display:none;
-    font-size:25px;
+    font-size:27px;
 }
 
 /* =========================
@@ -185,10 +186,10 @@ button{
 ========================= */
 
 .hero{
-    min-height:100vh;
     max-width:1250px;
+    min-height:100vh;
     margin:auto;
-    padding:150px 6% 90px;
+    padding:150px 5% 90px;
     display:grid;
     grid-template-columns:1.1fr .9fr;
     align-items:center;
@@ -197,66 +198,65 @@ button{
 
 .badge{
     display:inline-flex;
+    gap:9px;
     align-items:center;
-    gap:8px;
     padding:9px 14px;
     border:1px solid var(--border);
-    background:var(--card);
     border-radius:100px;
-    color:#d7d9e6;
-    font-size:13px;
-    margin-bottom:25px;
+    background:var(--card);
+    color:#c7d8d2;
+    font-size:12px;
+    margin-bottom:23px;
 }
 
-.badge span{
+.badge i{
     width:8px;
     height:8px;
     border-radius:50%;
-    background:var(--success);
-    box-shadow:0 0 15px var(--success);
+    background:var(--green2);
+    box-shadow:0 0 15px var(--green2);
 }
 
 .hero h1{
     font-family:Poppins;
     font-size:clamp(45px,6vw,78px);
-    line-height:1.02;
+    line-height:1.03;
     letter-spacing:-3px;
 }
 
-.gradient-text{
-    background:linear-gradient(90deg,#fff,var(--accent),#9d8cff);
+.gold{
+    background:linear-gradient(90deg,#fff,var(--gold),var(--green2));
     -webkit-background-clip:text;
     color:transparent;
 }
 
-.hero p{
-    max-width:620px;
+.hero-text{
+    max-width:650px;
     color:var(--muted);
-    font-size:17px;
     line-height:1.8;
     margin:25px 0 30px;
+    font-size:17px;
 }
 
-.hero-buttons{
+.buttons{
     display:flex;
-    gap:14px;
     flex-wrap:wrap;
+    gap:13px;
 }
 
 .btn{
-    border:none;
+    border:0;
     padding:15px 22px;
     border-radius:14px;
     color:white;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
     font-weight:700;
-    box-shadow:0 15px 35px rgba(108,99,255,.25);
+    background:linear-gradient(135deg,var(--green),#0b9e6a);
+    box-shadow:0 15px 35px rgba(22,199,132,.2);
     transition:.3s;
 }
 
 .btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 20px 45px rgba(108,99,255,.4);
 }
 
 .btn-outline{
@@ -265,67 +265,83 @@ button{
     box-shadow:none;
 }
 
-/* Hero visual */
+/* =========================
+   HERO CARD
+========================= */
 
 .hero-visual{
     position:relative;
-    min-height:470px;
+    min-height:480px;
     display:grid;
     place-items:center;
 }
 
 .glow{
     position:absolute;
-    width:330px;
-    height:330px;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
-    filter:blur(100px);
-    opacity:.25;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:var(--green);
+    filter:blur(110px);
+    opacity:.18;
 }
 
-.learning-card{
+.quran-card{
     position:relative;
-    width:min(390px,100%);
-    padding:30px;
-    border-radius:28px;
-    background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04));
+    width:min(410px,100%);
+    padding:32px;
+    border-radius:30px;
+    background:
+    linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
     border:1px solid var(--border);
     box-shadow:var(--shadow);
     backdrop-filter:blur(20px);
     transform:rotate(2deg);
 }
 
-.learning-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.avatar{
-    width:58px;
-    height:58px;
-    border-radius:18px;
+.quran-symbol{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:24px;
     display:grid;
     place-items:center;
-    background:linear-gradient(135deg,#7c6cff,#00d4ff);
-    font-size:23px;
-    font-weight:800;
+    font-size:38px;
+    background:rgba(232,198,106,.1);
+    border:1px solid rgba(232,198,106,.2);
 }
 
-.live{
-    color:#55efaa;
-    background:rgba(39,226,139,.1);
-    border:1px solid rgba(39,226,139,.2);
-    padding:7px 10px;
-    border-radius:30px;
-    font-size:12px;
+.arabic{
+    font-size:28px;
+    text-align:center;
+    margin-top:25px;
+    color:var(--gold);
+    font-family:serif;
+}
+
+.quran-card h3{
+    text-align:center;
+    margin-top:10px;
+    font-size:23px;
+}
+
+.quran-card p{
+    text-align:center;
+    color:var(--muted);
+    margin-top:8px;
 }
 
 .progress{
-    margin-top:30px;
+    margin-top:28px;
 }
 
-.progress-line{
+.progress-head{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+.progress-bar{
     height:8px;
     background:rgba(255,255,255,.08);
     border-radius:20px;
@@ -333,35 +349,33 @@ button{
     margin-top:10px;
 }
 
-.progress-line div{
-    width:78%;
+.progress-bar div{
+    width:72%;
     height:100%;
-    background:linear-gradient(90deg,var(--primary),var(--accent));
-    border-radius:20px;
+    background:linear-gradient(90deg,var(--green),var(--gold));
 }
 
-.stats-mini{
+.mini{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
     margin-top:25px;
 }
 
-.stat-mini{
-    background:rgba(255,255,255,.05);
-    padding:14px;
-    border-radius:14px;
+.mini div{
+    padding:13px 5px;
+    border-radius:13px;
     text-align:center;
+    background:rgba(255,255,255,.05);
 }
 
-.stat-mini strong{
+.mini strong{
     display:block;
-    font-size:18px;
 }
 
-.stat-mini span{
+.mini span{
     color:var(--muted);
-    font-size:11px;
+    font-size:10px;
 }
 
 /* =========================
@@ -369,37 +383,36 @@ button{
 ========================= */
 
 section{
-    padding:100px 6%;
+    padding:100px 5%;
 }
 
-.section-inner{
+.container{
     max-width:1250px;
     margin:auto;
 }
 
-.section-title{
+.heading{
     text-align:center;
     margin-bottom:55px;
 }
 
-.section-title span{
-    color:var(--accent);
-    font-size:13px;
-    font-weight:800;
+.heading small{
+    color:var(--gold);
     letter-spacing:2px;
+    font-weight:800;
     text-transform:uppercase;
 }
 
-.section-title h2{
+.heading h2{
     font-family:Poppins;
-    font-size:clamp(32px,4vw,48px);
+    font-size:clamp(32px,4vw,50px);
     margin-top:10px;
 }
 
-.section-title p{
+.heading p{
     max-width:650px;
+    margin:14px auto 0;
     color:var(--muted);
-    margin:15px auto 0;
     line-height:1.7;
 }
 
@@ -415,15 +428,16 @@ section{
 
 .stat{
     padding:30px;
-    border:1px solid var(--border);
-    background:var(--card);
-    border-radius:20px;
     text-align:center;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--card);
 }
 
 .stat h3{
-    font-size:34px;
     font-family:Poppins;
+    font-size:35px;
+    color:var(--gold);
 }
 
 .stat p{
@@ -432,10 +446,65 @@ section{
 }
 
 /* =========================
+   LEVELS
+========================= */
+
+.level-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.level{
+    position:relative;
+    padding:25px 18px;
+    min-height:230px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:var(--card);
+    transition:.35s;
+}
+
+.level:hover{
+    transform:translateY(-8px);
+    border-color:rgba(22,199,132,.45);
+}
+
+.level-number{
+    width:43px;
+    height:43px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    color:#06120f;
+    font-weight:800;
+    background:linear-gradient(135deg,var(--gold),var(--green2));
+}
+
+.level h3{
+    margin:20px 0 10px;
+    font-size:18px;
+}
+
+.level p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
+
+.level button{
+    margin-top:15px;
+    background:none;
+    border:0;
+    color:var(--green2);
+    font-size:12px;
+}
+
+/* =========================
    COURSES
 ========================= */
 
-.course-grid{
+.courses{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
@@ -444,27 +513,24 @@ section{
 .course{
     padding:30px;
     border:1px solid var(--border);
+    border-radius:25px;
     background:var(--card);
-    border-radius:24px;
     transition:.35s;
-    position:relative;
-    overflow:hidden;
 }
 
 .course:hover{
-    transform:translateY(-8px);
-    border-color:rgba(139,92,246,.5);
+    transform:translateY(-7px);
 }
 
-.course-icon{
+.icon{
     width:60px;
     height:60px;
     border-radius:18px;
     display:grid;
     place-items:center;
-    background:rgba(108,99,255,.13);
-    font-size:28px;
-    margin-bottom:25px;
+    font-size:27px;
+    background:rgba(22,199,132,.1);
+    margin-bottom:22px;
 }
 
 .course h3{
@@ -483,33 +549,33 @@ section{
 }
 
 .course li{
-    margin:10px 0;
-    color:#d4d7e5;
+    color:#d7e2de;
+    margin:11px 0;
+    font-size:14px;
 }
 
-.course li::before{
+.course li:before{
     content:"✓";
-    color:var(--success);
-    margin-right:10px;
+    color:var(--green2);
+    margin-right:9px;
 }
 
 /* =========================
    TUTORS
 ========================= */
 
-.tutor-grid{
+.tutors{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:25px;
 }
 
 .tutor{
-    position:relative;
-    padding:30px;
+    padding:32px;
     border:1px solid var(--border);
     border-radius:28px;
-    background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
-    overflow:hidden;
+    background:
+    linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
     transition:.35s;
 }
 
@@ -519,19 +585,20 @@ section{
 
 .tutor-top{
     display:flex;
-    gap:20px;
     align-items:center;
+    gap:20px;
 }
 
-.tutor-avatar{
-    width:90px;
-    height:90px;
-    border-radius:25px;
+.tutor-photo{
+    width:95px;
+    height:95px;
+    border-radius:27px;
     display:grid;
     place-items:center;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
-    font-size:31px;
+    font-size:30px;
     font-weight:800;
+    color:#07130f;
+    background:linear-gradient(135deg,var(--gold),var(--green2));
 }
 
 .tutor h3{
@@ -539,30 +606,30 @@ section{
 }
 
 .verified{
-    display:inline-block;
+    color:var(--green2);
+    font-size:12px;
     margin-top:7px;
-    color:#63e6be;
-    font-size:13px;
 }
 
 .tutor p{
     color:var(--muted);
-    line-height:1.7;
-    margin:20px 0;
+    line-height:1.8;
+    margin:22px 0;
 }
 
 .tags{
     display:flex;
     gap:8px;
     flex-wrap:wrap;
+    margin-bottom:22px;
 }
 
 .tag{
-    padding:8px 11px;
-    background:rgba(255,255,255,.06);
     border:1px solid var(--border);
+    background:rgba(255,255,255,.05);
+    padding:8px 11px;
     border-radius:9px;
-    font-size:12px;
+    font-size:11px;
 }
 
 /* =========================
@@ -575,58 +642,62 @@ section{
     gap:20px;
 }
 
-.price-card{
+.price{
     padding:32px;
-    background:var(--card);
     border:1px solid var(--border);
     border-radius:25px;
+    background:var(--card);
 }
 
-.price-card.featured{
-    border-color:var(--primary);
-    box-shadow:0 20px 70px rgba(108,99,255,.18);
+.price.featured{
+    border-color:rgba(22,199,132,.6);
+    box-shadow:0 20px 60px rgba(22,199,132,.12);
     transform:scale(1.03);
 }
 
 .popular{
     display:inline-block;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
     padding:7px 11px;
     border-radius:20px;
-    font-size:11px;
+    background:var(--green);
+    font-size:10px;
     font-weight:800;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
-.price{
-    font-size:38px;
+.price h3{
+    font-size:22px;
+}
+
+.amount{
+    font-size:34px;
     font-weight:800;
     margin:15px 0;
 }
 
-.price small{
-    font-size:13px;
+.amount small{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.price p{
     color:var(--muted);
 }
 
-.price-card p{
-    color:var(--muted);
-}
-
-.price-card ul{
+.price ul{
     list-style:none;
     margin:25px 0;
 }
 
-.price-card li{
+.price li{
     margin:13px 0;
-    color:#d8dbea;
+    font-size:14px;
 }
 
-.price-card li::before{
+.price li:before{
     content:"✓";
-    color:var(--success);
-    margin-right:10px;
+    color:var(--green2);
+    margin-right:9px;
 }
 
 /* =========================
@@ -634,44 +705,45 @@ section{
 ========================= */
 
 .trial{
+    padding:70px 35px;
     border-radius:35px;
-    padding:65px;
-    background:
-      radial-gradient(circle at 10% 20%,rgba(0,212,255,.18),transparent 30%),
-      radial-gradient(circle at 90% 80%,rgba(108,99,255,.25),transparent 35%),
-      rgba(255,255,255,.05);
-    border:1px solid var(--border);
     text-align:center;
+    border:1px solid var(--border);
+    background:
+    radial-gradient(circle at 10% 30%,rgba(22,199,132,.17),transparent 30%),
+    radial-gradient(circle at 90% 70%,rgba(232,198,106,.11),transparent 30%),
+    rgba(255,255,255,.045);
 }
 
 .trial h2{
     font-family:Poppins;
-    font-size:42px;
+    font-size:clamp(32px,4vw,48px);
 }
 
 .trial p{
     max-width:650px;
-    margin:15px auto 25px;
     color:var(--muted);
+    line-height:1.7;
+    margin:15px auto 25px;
 }
 
 /* =========================
-   FORM
+   REGISTER
 ========================= */
 
-.form-box{
-    max-width:850px;
+.form{
+    max-width:900px;
     margin:auto;
     padding:35px;
     border:1px solid var(--border);
+    border-radius:27px;
     background:var(--card);
-    border-radius:25px;
 }
 
 .form-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:15px;
+    gap:16px;
 }
 
 .field{
@@ -680,34 +752,33 @@ section{
     gap:8px;
 }
 
-.field.full{
+.full{
     grid-column:1/-1;
 }
 
 .field label{
+    color:#cadbd5;
     font-size:13px;
-    color:#cbd0df;
 }
 
 .field input,
 .field select,
 .field textarea{
-    width:100%;
-    padding:14px;
-    border-radius:12px;
     border:1px solid var(--border);
-    outline:none;
     background:rgba(0,0,0,.2);
     color:white;
-}
-
-.field select option{
-    background:#11131e;
+    padding:14px;
+    border-radius:12px;
+    outline:none;
 }
 
 .field textarea{
-    min-height:100px;
+    min-height:110px;
     resize:vertical;
+}
+
+.field select option{
+    background:#0b1714;
 }
 
 /* =========================
@@ -720,33 +791,33 @@ section{
 }
 
 .faq-item{
-    border:1px solid var(--border);
-    background:var(--card);
-    border-radius:15px;
     margin-bottom:12px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:var(--card);
     overflow:hidden;
 }
 
-.faq-question{
+.question{
     width:100%;
+    padding:20px;
     background:none;
     color:white;
-    border:none;
-    padding:20px;
+    border:0;
     text-align:left;
     display:flex;
     justify-content:space-between;
     font-weight:700;
 }
 
-.faq-answer{
+.answer{
     display:none;
-    padding:0 20px 20px;
     color:var(--muted);
     line-height:1.7;
+    padding:0 20px 20px;
 }
 
-.faq-item.active .faq-answer{
+.faq-item.active .answer{
     display:block;
 }
 
@@ -755,12 +826,12 @@ section{
 ========================= */
 
 footer{
-    padding:60px 6% 30px;
     border-top:1px solid var(--border);
-    background:rgba(0,0,0,.2);
+    padding:65px 5% 30px;
+    background:rgba(0,0,0,.18);
 }
 
-.footer-inner{
+.footer{
     max-width:1250px;
     margin:auto;
     display:grid;
@@ -768,26 +839,26 @@ footer{
     gap:40px;
 }
 
-.footer-col h3{
-    margin-bottom:18px;
+.footer h3{
+    margin-bottom:15px;
 }
 
-.footer-col p,
-.footer-col a{
+.footer p,
+.footer a{
     color:var(--muted);
     line-height:2;
-    display:block;
     font-size:14px;
+    display:block;
 }
 
-.copyright{
+.copy{
     max-width:1250px;
     margin:40px auto 0;
-    padding-top:25px;
     border-top:1px solid var(--border);
+    padding-top:25px;
     color:var(--muted);
-    font-size:13px;
     text-align:center;
+    font-size:12px;
 }
 
 /* =========================
@@ -801,21 +872,21 @@ footer{
     display:none;
     place-items:center;
     padding:20px;
-    background:rgba(0,0,0,.7);
+    background:rgba(0,0,0,.75);
     backdrop-filter:blur(8px);
 }
 
-.modal.active{
+.modal.show{
     display:grid;
 }
 
 .modal-box{
-    width:min(550px,100%);
-    padding:30px;
-    border-radius:25px;
-    background:#101321;
-    border:1px solid var(--border);
     position:relative;
+    width:min(550px,100%);
+    padding:32px;
+    border-radius:25px;
+    background:#0b1915;
+    border:1px solid var(--border);
     box-shadow:var(--shadow);
 }
 
@@ -825,7 +896,7 @@ footer{
     right:15px;
     width:35px;
     height:35px;
-    border:none;
+    border:0;
     border-radius:50%;
     background:rgba(255,255,255,.08);
     color:white;
@@ -840,10 +911,10 @@ footer{
     right:20px;
     bottom:20px;
     z-index:8000;
-    background:#171a29;
-    border:1px solid var(--border);
     padding:15px 20px;
     border-radius:14px;
+    border:1px solid var(--border);
+    background:#10201b;
     transform:translateY(100px);
     opacity:0;
     transition:.35s;
@@ -858,22 +929,22 @@ footer{
    MOBILE
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-    .nav-links{
+    .links{
         position:absolute;
         top:80px;
         left:5%;
         width:90%;
+        padding:22px;
         display:none;
         flex-direction:column;
-        padding:25px;
         border:1px solid var(--border);
         border-radius:20px;
-        background:#0d101d;
+        background:#091612;
     }
 
-    .nav-links.open{
+    .links.open{
         display:flex;
     }
 
@@ -886,22 +957,26 @@ footer{
         text-align:center;
     }
 
-    .hero p{
+    .hero-text{
         margin-left:auto;
         margin-right:auto;
     }
 
-    .hero-buttons{
+    .buttons{
         justify-content:center;
     }
 
-    .stats,
-    .course-grid,
-    .pricing{
-        grid-template-columns:1fr 1fr;
+    .level-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .footer-inner{
+    .stats,
+    .courses,
+    .pricing{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer{
         grid-template-columns:1fr 1fr;
     }
 }
@@ -912,34 +987,34 @@ footer{
         padding:75px 5%;
     }
 
-    .hero{
-        padding-left:5%;
-        padding-right:5%;
+    .stats,
+    .courses,
+    .tutors,
+    .pricing,
+    .level-grid,
+    .form-grid,
+    .footer{
+        grid-template-columns:1fr;
+    }
+
+    .price.featured{
+        transform:none;
+    }
+
+    .form{
+        padding:23px;
+    }
+
+    .trial{
+        padding:45px 20px;
     }
 
     .hero h1{
         letter-spacing:-2px;
     }
 
-    .stats,
-    .course-grid,
-    .tutor-grid,
-    .pricing,
-    .form-grid,
-    .footer-inner{
-        grid-template-columns:1fr;
-    }
-
-    .price-card.featured{
-        transform:none;
-    }
-
-    .trial{
-        padding:40px 20px;
-    }
-
-    .trial h2{
-        font-size:32px;
+    .full{
+        grid-column:auto;
     }
 
 }
@@ -949,69 +1024,116 @@ footer{
 
 <body>
 
-<!-- LOADER -->
+<!-- =========================
+     LOADER
+========================= -->
 
 <div id="loader">
-    <div class="loader-box">
-        <div class="loader-logo">TE</div>
-        <p>Loading The Education...</p>
-    </div>
+
+<div class="loader">
+
+<div class="loader-logo">TE</div>
+
+<p>
+Preparing your learning journey...
+</p>
+
+</div>
+
 </div>
 
 
-<!-- NAVBAR -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header class="navbar">
 
-<div class="nav-inner">
+<div class="nav">
 
 <a href="#home" class="logo">
-    <div class="logo-icon">TE</div>
-    The Education
+
+<div class="logo-box">
+TE
+</div>
+
+The Education
+
 </a>
 
-<nav class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#courses">Courses</a>
-    <a href="#tutors">Tutors</a>
-    <a href="#pricing">Plans</a>
-    <a href="#trial">Free Trial</a>
-    <a href="#register" class="nav-btn">Join Now</a>
+
+<nav class="links" id="links">
+
+<a href="#home">Home</a>
+<a href="#levels">Levels</a>
+<a href="#courses">Courses</a>
+<a href="#tutors">Tutors</a>
+<a href="#pricing">Plans</a>
+<a href="#trial">Free Trial</a>
+
+<a href="#register" class="join-btn">
+Join Now
+</a>
+
 </nav>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+
+<div class="menu" onclick="menu()">
+☰
+</div>
 
 </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
-<main id="home">
-
-<section class="hero">
+<section class="hero" id="home">
 
 <div>
 
 <div class="badge">
-    <span></span>
-    New Generation Online Learning
+
+<i></i>
+
+Modern Online Quran Learning
+
 </div>
 
+
 <h1>
-    Learn Better.<br>
-    <span class="gradient-text">Grow Faster.</span>
+
+Learn Quran.<br>
+
+<span class="gold">
+Grow With Guidance.
+</span>
+
 </h1>
 
-<p>
-    Welcome to The Education — a modern online learning platform
-    where students learn with expert tutors through personalized,
-    interactive and flexible classes.
+
+<p class="hero-text">
+
+Welcome to <b>The Education</b> — a modern online Quran
+learning academy where students can learn Quran reading,
+Tajweed and memorization with dedicated tutors.
+
 </p>
 
-<div class="hero-buttons">
-    <a href="#trial" class="btn">🎓 Book Free Trial</a>
-    <a href="#courses" class="btn btn-outline">Explore Courses →</a>
+
+<div class="buttons">
+
+<a href="#trial" class="btn">
+📖 Start Free Trial
+</a>
+
+<a href="#levels" class="btn btn-outline">
+Explore Levels →
+</a>
+
 </div>
 
 </div>
@@ -1021,54 +1143,58 @@ footer{
 
 <div class="glow"></div>
 
-<div class="learning-card">
 
-<div class="learning-top">
+<div class="quran-card">
 
-<div>
-<div class="avatar">TE</div>
+<div class="quran-symbol">
+📖
 </div>
 
-<div class="live">● Online Learning</div>
-
+<div class="arabic">
+اقْرَأْ
 </div>
 
-<h3 style="margin-top:25px;font-size:24px">
-Your Learning Journey
+<h3>
+Your Quran Journey
 </h3>
 
-<p style="color:var(--muted);margin-top:8px">
-Personalized classes with expert tutors.
+<p>
+Learn step by step with personal guidance.
 </p>
+
 
 <div class="progress">
 
-<div style="display:flex;justify-content:space-between">
+<div class="progress-head">
+
 <span>Learning Progress</span>
-<strong>78%</strong>
+
+<strong>72%</strong>
+
 </div>
 
-<div class="progress-line">
+<div class="progress-bar">
 <div></div>
 </div>
 
 </div>
 
-<div class="stats-mini">
 
-<div class="stat-mini">
-<strong>2</strong>
-<span>Expert Tutors</span>
+<div class="mini">
+
+<div>
+<strong>5</strong>
+<span>Levels</span>
 </div>
 
-<div class="stat-mini">
+<div>
+<strong>2</strong>
+<span>Tutors</span>
+</div>
+
+<div>
 <strong>1:1</strong>
 <span>Classes</span>
-</div>
-
-<div class="stat-mini">
-<strong>24/7</strong>
-<span>Support</span>
 </div>
 
 </div>
@@ -1080,16 +1206,23 @@ Personalized classes with expert tutors.
 </section>
 
 
-<!-- STATS -->
+<!-- =========================
+     STATS
+========================= -->
 
 <section>
 
-<div class="section-inner">
+<div class="container">
 
 <div class="stats">
 
 <div class="stat">
-<h3>2+</h3>
+<h3>5</h3>
+<p>Learning Levels</p>
+</div>
+
+<div class="stat">
+<h3>2</h3>
 <p>Expert Tutors</p>
 </div>
 
@@ -1103,10 +1236,121 @@ Personalized classes with expert tutors.
 <p>Online Learning</p>
 </div>
 
-<div class="stat">
-<h3>24/7</h3>
-<p>Access</p>
 </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LEVELS
+========================= -->
+
+<section id="levels">
+
+<div class="container">
+
+<div class="heading">
+
+<small>Step By Step</small>
+
+<h2>Quran Learning Levels</h2>
+
+<p>
+Start from your current ability and move forward level by level.
+</p>
+
+</div>
+
+
+<div class="level-grid">
+
+
+<div class="level">
+
+<div class="level-number">01</div>
+
+<h3>Noorani Qaida</h3>
+
+<p>
+Arabic letters, Harakaat, joining letters and basic reading.
+</p>
+
+<button onclick="trial('Noorani Qaida')">
+Start Level →
+</button>
+
+</div>
+
+
+<div class="level">
+
+<div class="level-number">02</div>
+
+<h3>Quran Reading</h3>
+
+<p>
+Learn to read the Quran correctly and confidently.
+</p>
+
+<button onclick="trial('Quran Reading')">
+Start Level →
+</button>
+
+</div>
+
+
+<div class="level">
+
+<div class="level-number">03</div>
+
+<h3>Tajweed</h3>
+
+<p>
+Learn Tajweed rules and improve pronunciation.
+</p>
+
+<button onclick="trial('Tajweed')">
+Start Level →
+</button>
+
+</div>
+
+
+<div class="level">
+
+<div class="level-number">04</div>
+
+<h3>Memorization</h3>
+
+<p>
+Build a structured Hifz routine with revision and practice.
+</p>
+
+<button onclick="trial('Quran Memorization')">
+Start Level →
+</button>
+
+</div>
+
+
+<div class="level">
+
+<div class="level-number">05</div>
+
+<h3>Advanced Quran</h3>
+
+<p>
+Improve fluency, Tajweed and recitation quality.
+</p>
+
+<button onclick="trial('Advanced Quran')">
+Start Level →
+</button>
+
+</div>
+
 
 </div>
 
@@ -1115,75 +1359,107 @@ Personalized classes with expert tutors.
 </section>
 
 
-<!-- COURSES -->
+<!-- =========================
+     COURSES
+========================= -->
 
 <section id="courses">
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-title">
-<span>Our Programs</span>
-<h2>Courses Designed For You</h2>
+<div class="heading">
+
+<small>What We Teach</small>
+
+<h2>Our Quran Programs</h2>
+
 <p>
-Choose a learning path that matches your goals and study with
-personal attention from your tutor.
+Choose the program that matches your current learning goals.
 </p>
+
 </div>
 
-<div class="course-grid">
+
+<div class="courses">
+
 
 <div class="course">
-<div class="course-icon">📚</div>
-<h3>Academic Classes</h3>
-<p>Improve your school subjects with structured online lessons.</p>
+
+<div class="icon">📖</div>
+
+<h3>Quran Reading</h3>
+
+<p>
+Build confidence in reading the Quran with personal guidance.
+</p>
 
 <ul>
-<li>Personal attention</li>
-<li>Concept building</li>
-<li>Homework support</li>
-<li>Test preparation</li>
+
+<li>Arabic reading</li>
+<li>Correct pronunciation</li>
+<li>Daily practice</li>
+<li>Reading improvement</li>
+
 </ul>
 
-<button class="btn" onclick="openTrial('Academic Classes')">
+<button class="btn" onclick="trial('Quran Reading')">
 Start Learning
 </button>
+
 </div>
 
 
 <div class="course">
-<div class="course-icon">🧠</div>
-<h3>Concept Mastery</h3>
-<p>Understand difficult topics instead of simply memorizing them.</p>
+
+<div class="icon">✨</div>
+
+<h3>Tajweed</h3>
+
+<p>
+Learn Quran recitation with proper Tajweed rules.
+</p>
 
 <ul>
-<li>Step-by-step lessons</li>
-<li>Practice questions</li>
+
+<li>Makharij</li>
+<li>Tajweed rules</li>
+<li>Recitation practice</li>
+<li>Error correction</li>
+
+</ul>
+
+<button class="btn" onclick="trial('Tajweed')">
+Start Learning
+</button>
+
+</div>
+
+
+<div class="course">
+
+<div class="icon">🕌</div>
+
+<h3>Quran Memorization</h3>
+
+<p>
+A structured approach to memorization and revision.
+</p>
+
+<ul>
+
+<li>Surah memorization</li>
+<li>Daily targets</li>
+<li>Revision</li>
 <li>Progress tracking</li>
-<li>Revision sessions</li>
+
 </ul>
 
-<button class="btn" onclick="openTrial('Concept Mastery')">
+<button class="btn" onclick="trial('Quran Memorization')">
 Start Learning
 </button>
+
 </div>
 
-
-<div class="course">
-<div class="course-icon">🏆</div>
-<h3>Exam Preparation</h3>
-<p>Prepare for tests and examinations with focused practice.</p>
-
-<ul>
-<li>Important topics</li>
-<li>Mock tests</li>
-<li>MCQs</li>
-<li>Exam strategies</li>
-</ul>
-
-<button class="btn" onclick="openTrial('Exam Preparation')">
-Start Learning
-</button>
-</div>
 
 </div>
 
@@ -1192,89 +1468,125 @@ Start Learning
 </section>
 
 
-<!-- TUTORS -->
+<!-- =========================
+     TUTORS
+========================= -->
 
 <section id="tutors">
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-title">
-<span>Meet Our Tutors</span>
-<h2>Learn With The Right Tutor</h2>
+<div class="heading">
+
+<small>Your Teachers</small>
+
+<h2>Meet Our Tutors</h2>
+
 <p>
-Two dedicated tutors ready to help students understand,
-practice and improve.
+Learn with personal attention from our dedicated Quran tutors.
 </p>
+
 </div>
 
-<div class="tutor-grid">
+
+<div class="tutors">
 
 
 <div class="tutor">
 
 <div class="tutor-top">
 
-<div class="tutor-avatar">AS</div>
+<div class="tutor-photo">
+AS
+</div>
 
 <div>
-<h3>Abdullah Shahzad</h3>
-<div class="verified">✓ Verified Tutor</div>
+
+<h3>
+Abdullah Shahzad
+</h3>
+
+<div class="verified">
+✓ Quran Tutor
 </div>
 
 </div>
+
+</div>
+
 
 <p>
-Abdullah Shahzad provides friendly and structured lessons
-with a focus on understanding concepts and helping students
-progress step by step.
+Abdullah Shahzad focuses on clear Quran reading,
+Tajweed practice and step-by-step learning.
 </p>
 
-<div class="tags">
-<span class="tag">Academic</span>
-<span class="tag">Concepts</span>
-<span class="tag">Exam Prep</span>
-</div>
-
-<br>
-
-<button class="btn" onclick="selectTutor('Abdullah Shahzad')">
-Choose Abdullah
-</button>
-
-</div>
-
-
-<div class="tutor">
-
-<div class="tutor-top">
-
-<div class="tutor-avatar">UA</div>
-
-<div>
-<h3>Uzair Amad</h3>
-<div class="verified">✓ Verified Tutor</div>
-</div>
-
-</div>
-
-<p>
-Uzair Amad helps students learn through clear explanations,
-practice and interactive lessons designed around their needs.
-</p>
 
 <div class="tags">
-<span class="tag">Academic</span>
-<span class="tag">Practice</span>
+
+<span class="tag">Quran Reading</span>
+<span class="tag">Tajweed</span>
 <span class="tag">Revision</span>
+
 </div>
 
-<br>
 
-<button class="btn" onclick="selectTutor('Uzair Amad')">
-Choose Uzair
+<button class="btn"
+onclick="chooseTutor('Abdullah Shahzad')">
+
+Choose Abdullah
+
 </button>
 
 </div>
+
+
+<div class="tutor">
+
+<div class="tutor-top">
+
+<div class="tutor-photo">
+UA
+</div>
+
+<div>
+
+<h3>
+Uzair Amad
+</h3>
+
+<div class="verified">
+✓ Quran Tutor
+</div>
+
+</div>
+
+</div>
+
+
+<p>
+Uzair Amad provides interactive Quran lessons with
+focus on pronunciation, practice and consistency.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">Quran Reading</span>
+<span class="tag">Tajweed</span>
+<span class="tag">Memorization</span>
+
+</div>
+
+
+<button class="btn"
+onclick="chooseTutor('Uzair Amad')">
+
+Choose Uzair
+
+</button>
+
+</div>
+
 
 </div>
 
@@ -1283,96 +1595,113 @@ Choose Uzair
 </section>
 
 
-<!-- PRICING -->
+<!-- =========================
+     PRICING
+========================= -->
 
 <section id="pricing">
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-title">
-<span>Simple Plans</span>
-<h2>Choose Your Learning Plan</h2>
+<div class="heading">
+
+<small>Learning Plans</small>
+
+<h2>Simple Monthly Plans</h2>
+
 <p>
-Flexible options for students who want consistent progress.
+Choose a schedule that works for your learning routine.
 </p>
+
 </div>
+
 
 <div class="pricing">
 
-<div class="price-card">
-
-<h3>Starter</h3>
 
 <div class="price">
+
+<h3>Basic</h3>
+
+<div class="amount">
 Rs. 2,500 <small>/ month</small>
 </div>
 
-<p>For students starting their learning journey.</p>
+<p>
+For students beginning their Quran journey.
+</p>
 
 <ul>
-<li>2 classes / week</li>
+<li>2 classes per week</li>
 <li>Personal tutor</li>
+<li>Quran reading</li>
 <li>Basic progress tracking</li>
-<li>Homework support</li>
 </ul>
 
-<button class="btn" onclick="openTrial('Starter')">
-Get Started
+<button class="btn" onclick="trial('Basic Plan')">
+Choose Plan
 </button>
 
 </div>
 
 
-<div class="price-card featured">
+<div class="price featured">
 
-<div class="popular">MOST POPULAR</div>
+<div class="popular">
+POPULAR
+</div>
 
 <h3>Standard</h3>
 
-<div class="price">
+<div class="amount">
 Rs. 4,500 <small>/ month</small>
 </div>
 
-<p>A balanced plan for regular students.</p>
+<p>
+For students wanting regular structured learning.
+</p>
 
 <ul>
-<li>4 classes / week</li>
+<li>4 classes per week</li>
 <li>Personal tutor</li>
+<li>Tajweed practice</li>
 <li>Progress tracking</li>
-<li>Practice sessions</li>
-<li>Priority support</li>
+<li>Revision support</li>
 </ul>
 
-<button class="btn" onclick="openTrial('Standard')">
-Choose Standard
+<button class="btn" onclick="trial('Standard Plan')">
+Choose Plan
 </button>
 
 </div>
 
 
-<div class="price-card">
+<div class="price">
 
 <h3>Premium</h3>
 
-<div class="price">
+<div class="amount">
 Rs. 6,500 <small>/ month</small>
 </div>
 
-<p>For students wanting intensive learning.</p>
+<p>
+For intensive Quran learning and memorization.
+</p>
 
 <ul>
-<li>6 classes / week</li>
+<li>6 classes per week</li>
 <li>Personal tutor</li>
-<li>Advanced practice</li>
-<li>Exam preparation</li>
+<li>Advanced Tajweed</li>
+<li>Memorization support</li>
 <li>Priority support</li>
 </ul>
 
-<button class="btn" onclick="openTrial('Premium')">
-Go Premium
+<button class="btn" onclick="trial('Premium Plan')">
+Choose Plan
 </button>
 
 </div>
+
 
 </div>
 
@@ -1381,23 +1710,30 @@ Go Premium
 </section>
 
 
-<!-- FREE TRIAL -->
+<!-- =========================
+     TRIAL
+========================= -->
 
 <section id="trial">
 
-<div class="section-inner">
+<div class="container">
 
 <div class="trial">
 
-<h2>🎓 Try Your First Class Free</h2>
+<h2>
+🌙 Start With A Free Trial
+</h2>
 
 <p>
-Not sure which tutor is right for you?
-Book a free trial class and experience The Education yourself.
+Meet your tutor, experience the learning style and decide
+which Quran program is right for you.
 </p>
 
-<button class="btn" onclick="openTrial('Free Trial')">
+<button class="btn"
+onclick="trial('Free Trial')">
+
 Book Free Trial →
+
 </button>
 
 </div>
@@ -1407,80 +1743,144 @@ Book Free Trial →
 </section>
 
 
-<!-- REGISTER -->
+<!-- =========================
+     REGISTRATION
+========================= -->
 
 <section id="register">
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-title">
-<span>Registration</span>
-<h2>Start Your Learning Journey</h2>
+<div class="heading">
+
+<small>Join The Education</small>
+
+<h2>Student Registration</h2>
+
 <p>
-Fill in your details and our team can contact you about your classes.
+Fill in the form to request Quran classes.
 </p>
+
 </div>
 
 
-<div class="form-box">
+<div class="form">
 
-<form id="registrationForm">
+<form id="registerForm">
 
 <div class="form-grid">
 
+
 <div class="field">
+
 <label>Student Name</label>
-<input id="studentName" required placeholder="Enter student name">
+
+<input
+id="student"
+required
+placeholder="Enter student name">
+
 </div>
 
-<div class="field">
-<label>Father / Guardian Name</label>
-<input id="fatherName" required placeholder="Enter father or guardian name">
-</div>
 
 <div class="field">
+
+<label>Parent / Guardian Name</label>
+
+<input
+required
+placeholder="Enter parent name">
+
+</div>
+
+
+<div class="field">
+
 <label>Age</label>
-<input id="age" type="number" required placeholder="Age">
+
+<input
+type="number"
+required
+placeholder="Student age">
+
 </div>
 
-<div class="field">
-<label>School / Institute</label>
-<input id="school" placeholder="School name">
-</div>
 
 <div class="field">
-<label>Course</label>
-<select id="course">
-<option>Academic Classes</option>
-<option>Concept Mastery</option>
-<option>Exam Preparation</option>
-</select>
-</div>
 
-<div class="field">
-<label>Preferred Tutor</label>
-<select id="tutor">
+<label>Choose Tutor</label>
+
+<select id="tutorSelect">
+
 <option>Abdullah Shahzad</option>
 <option>Uzair Amad</option>
+
 </select>
+
 </div>
 
-<div class="field full">
-<label>Phone Number</label>
-<input id="phone" required placeholder="+92">
+
+<div class="field">
+
+<label>Learning Level</label>
+
+<select>
+
+<option>Noorani Qaida</option>
+<option>Quran Reading</option>
+<option>Tajweed</option>
+<option>Memorization</option>
+<option>Advanced Quran</option>
+
+</select>
+
 </div>
 
+
+<div class="field">
+
+<label>Preferred Classes</label>
+
+<select>
+
+<option>2 Classes / Week</option>
+<option>4 Classes / Week</option>
+<option>6 Classes / Week</option>
+
+</select>
+
+</div>
+
+
 <div class="field full">
+
+<label>WhatsApp / Phone Number</label>
+
+<input
+required
+placeholder="+92">
+
+</div>
+
+
+<div class="field full">
+
 <label>Message</label>
-<textarea id="message" placeholder="Tell us what you want to learn..."></textarea>
+
+<textarea
+placeholder="Tell us about the student's Quran learning experience..."></textarea>
+
 </div>
+
 
 </div>
 
 <br>
 
 <button class="btn" type="submit">
+
 🚀 Submit Registration
+
 </button>
 
 </form>
@@ -1492,68 +1892,83 @@ Fill in your details and our team can contact you about your classes.
 </section>
 
 
-<!-- FAQ -->
+<!-- =========================
+     FAQ
+========================= -->
 
 <section>
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-title">
-<span>FAQ</span>
+<div class="heading">
+
+<small>Help Center</small>
+
 <h2>Frequently Asked Questions</h2>
+
 </div>
+
 
 <div class="faq">
 
+
 <div class="faq-item">
-<button class="faq-question">
+
+<button class="question">
 How does the free trial work?
 <span>+</span>
 </button>
 
-<div class="faq-answer">
-Choose a tutor and book your free trial. The academy can then contact
-you to arrange the class details.
+<div class="answer">
+Select Free Trial and submit your details. Your selected tutor
+can then be arranged for the trial session.
 </div>
+
 </div>
 
 
 <div class="faq-item">
-<button class="faq-question">
+
+<button class="question">
 Can I choose my tutor?
 <span>+</span>
 </button>
 
-<div class="faq-answer">
+<div class="answer">
 Yes. You can select Abdullah Shahzad or Uzair Amad during registration.
 </div>
+
 </div>
 
 
 <div class="faq-item">
-<button class="faq-question">
-Are classes online?
+
+<button class="question">
+Which level should I start from?
 <span>+</span>
 </button>
 
-<div class="faq-answer">
-Yes. The Education is designed as an online learning platform so
-students can learn from home.
+<div class="answer">
+You can start from Noorani Qaida, Quran Reading, Tajweed,
+Memorization or Advanced Quran according to your current ability.
 </div>
+
 </div>
 
 
 <div class="faq-item">
-<button class="faq-question">
-Can I change my course later?
+
+<button class="question">
+Are the classes online?
 <span>+</span>
 </button>
 
-<div class="faq-answer">
-Course changes can be discussed with the academy according to the
-student's learning requirements.
+<div class="answer">
+Yes. The Education is designed for online Quran learning.
 </div>
+
 </div>
+
 
 </div>
 
@@ -1561,57 +1976,62 @@ student's learning requirements.
 
 </section>
 
-</main>
 
-
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="footer-inner">
+<div class="footer">
 
-<div class="footer-col">
+
+<div>
 
 <div class="logo">
-<div class="logo-icon">TE</div>
+
+<div class="logo-box">
+TE
+</div>
+
 The Education
+
 </div>
 
 <br>
 
 <p>
-Modern online education designed around students,
-personal learning and real progress.
+Modern online Quran learning with personal tutors,
+structured levels and consistent progress.
 </p>
 
 </div>
 
 
-<div class="footer-col">
+<div>
 
-<h3>Platform</h3>
+<h3>Explore</h3>
 
+<a href="#home">Home</a>
+<a href="#levels">Levels</a>
 <a href="#courses">Courses</a>
 <a href="#tutors">Tutors</a>
-<a href="#pricing">Plans</a>
-<a href="#trial">Free Trial</a>
 
 </div>
 
 
-<div class="footer-col">
+<div>
 
 <h3>Learning</h3>
 
+<a href="#pricing">Plans</a>
+<a href="#trial">Free Trial</a>
 <a href="#register">Registration</a>
-<a href="#courses">Academic</a>
-<a href="#courses">Concept Mastery</a>
-<a href="#courses">Exam Prep</a>
 
 </div>
 
 
-<div class="footer-col">
+<div>
 
 <h3>Support</h3>
 
@@ -1622,40 +2042,62 @@ personal learning and real progress.
 
 </div>
 
+
 </div>
 
-<div class="copyright">
-© 2026 The Education. All rights reserved.
+
+<div class="copy">
+
+© 2026 The Education — Quran Learning Academy.
+All rights reserved.
+
 </div>
 
 </footer>
 
 
-<!-- TRIAL MODAL -->
+<!-- =========================
+     MODAL
+========================= -->
 
-<div class="modal" id="trialModal">
+<div class="modal" id="modal">
 
 <div class="modal-box">
 
-<button class="close" onclick="closeModal()">×</button>
+<button class="close"
+onclick="closeModal()">
+×
+</button>
 
-<h2>🎓 Book Your Trial</h2>
+<h2>📖 Book Your Trial</h2>
 
 <p style="color:var(--muted);margin:10px 0 25px">
-Choose your preferred tutor and submit your details.
+
+Start your Quran learning journey.
+
 </p>
+
 
 <form id="trialForm">
 
+
 <div class="field">
+
 <label>Student Name</label>
-<input id="trialName" required placeholder="Student name">
+
+<input
+id="trialName"
+required
+placeholder="Student name">
+
 </div>
 
 <br>
 
+
 <div class="field">
-<label>Choose Tutor</label>
+
+<label>Select Tutor</label>
 
 <select id="trialTutor">
 
@@ -1668,16 +2110,45 @@ Choose your preferred tutor and submit your details.
 
 <br>
 
+
 <div class="field">
-<label>Phone Number</label>
-<input id="trialPhone" required placeholder="+92">
+
+<label>Learning Level</label>
+
+<select>
+
+<option>Noorani Qaida</option>
+<option>Quran Reading</option>
+<option>Tajweed</option>
+<option>Memorization</option>
+<option>Advanced Quran</option>
+
+</select>
+
 </div>
 
 <br>
 
+
+<div class="field">
+
+<label>WhatsApp / Phone</label>
+
+<input
+required
+placeholder="+92">
+
+</div>
+
+<br>
+
+
 <button class="btn" type="submit">
+
 Book Free Trial
+
 </button>
+
 
 </form>
 
@@ -1685,8 +2156,6 @@ Book Free Trial
 
 </div>
 
-
-<!-- TOAST -->
 
 <div id="toast"></div>
 
@@ -1697,14 +2166,16 @@ Book Free Trial
    LOADER
 ========================= */
 
-window.addEventListener("load",()=>{
+window.addEventListener("load",function(){
 
-setTimeout(()=>{
+setTimeout(function(){
 
 document.getElementById("loader").style.opacity="0";
 
-setTimeout(()=>{
+setTimeout(function(){
+
 document.getElementById("loader").style.display="none";
+
 },600);
 
 },700);
@@ -1716,9 +2187,11 @@ document.getElementById("loader").style.display="none";
    MOBILE MENU
 ========================= */
 
-function toggleMenu(){
+function menu(){
 
-document.getElementById("navLinks").classList.toggle("open");
+document
+.getElementById("links")
+.classList.toggle("open");
 
 }
 
@@ -1731,12 +2204,14 @@ function toast(message){
 
 const t=document.getElementById("toast");
 
-t.textContent=message;
+t.innerText=message;
 
 t.classList.add("show");
 
-setTimeout(()=>{
+setTimeout(function(){
+
 t.classList.remove("show");
+
 },3500);
 
 }
@@ -1746,34 +2221,47 @@ t.classList.remove("show");
    TRIAL
 ========================= */
 
-function openTrial(course){
+function trial(value){
 
-document.getElementById("trialModal").classList.add("active");
+document
+.getElementById("modal")
+.classList.add("show");
 
-toast(course+" selected");
-
-}
-
-function closeModal(){
-
-document.getElementById("trialModal").classList.remove("active");
+toast(value+" selected");
 
 }
 
 
 /* =========================
-   SELECT TUTOR
+   CLOSE MODAL
 ========================= */
 
-function selectTutor(name){
+function closeModal(){
 
-document.getElementById("tutor").value=name;
+document
+.getElementById("modal")
+.classList.remove("show");
 
-document.getElementById("register").scrollIntoView({
+}
+
+
+/* =========================
+   CHOOSE TUTOR
+========================= */
+
+function chooseTutor(name){
+
+document
+.getElementById("tutorSelect")
+.value=name;
+
+document
+.getElementById("register")
+.scrollIntoView({
 behavior:"smooth"
 });
 
-toast(name+" selected as your tutor");
+toast(name+" selected");
 
 }
 
@@ -1782,15 +2270,17 @@ toast(name+" selected as your tutor");
    REGISTRATION
 ========================= */
 
-document.getElementById("registrationForm")
+document
+.getElementById("registerForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const name=document.getElementById("studentName").value;
+const name=
+document.getElementById("student").value;
 
 toast(
-"Registration submitted successfully. Welcome "+name+"!"
+"Registration received for "+name+"!"
 );
 
 this.reset();
@@ -1802,18 +2292,23 @@ this.reset();
    TRIAL FORM
 ========================= */
 
-document.getElementById("trialForm")
+document
+.getElementById("trialForm")
 .addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const name=document.getElementById("trialName").value;
-const tutor=document.getElementById("trialTutor").value;
+const name=
+document.getElementById("trialName").value;
+
+const tutor=
+document.getElementById("trialTutor").value;
 
 closeModal();
 
 toast(
-"Free trial request sent for "+name+" with "+tutor+"!"
+"Trial request created for "+name+
+" with "+tutor+"!"
 );
 
 this.reset();
@@ -1825,19 +2320,24 @@ this.reset();
    FAQ
 ========================= */
 
-document.querySelectorAll(".faq-question")
-.forEach(button=>{
+document
+.querySelectorAll(".question")
+.forEach(function(button){
 
-button.addEventListener("click",()=>{
+button.addEventListener("click",function(){
 
-const item=button.parentElement;
+const item=
+button.parentElement;
 
 item.classList.toggle("active");
 
-const icon=button.querySelector("span");
+const icon=
+button.querySelector("span");
 
-icon.textContent=
-item.classList.contains("active") ? "−" : "+";
+icon.innerText=
+item.classList.contains("active")
+? "−"
+: "+";
 
 });
 
@@ -1848,24 +2348,29 @@ item.classList.contains("active") ? "−" : "+";
    CLOSE MODAL OUTSIDE
 ========================= */
 
-document.getElementById("trialModal")
+document
+.getElementById("modal")
 .addEventListener("click",function(e){
 
 if(e.target===this){
+
 closeModal();
+
 }
 
 });
 
 
 /* =========================
-   ESCAPE KEY
+   ESCAPE
 ========================= */
 
 document.addEventListener("keydown",function(e){
 
 if(e.key==="Escape"){
+
 closeModal();
+
 }
 
 });
