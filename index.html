@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Education | Learn Without Limits</title>
+
+<meta name="description"
+content="The Education - Modern online learning platform with expert tutors Abdullah Shahzad and Uzair Amad.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ROOT
+========================= */
+
+:root{
+    --primary:#6c63ff;
+    --primary2:#8b5cf6;
+    --accent:#00d4ff;
+    --bg:#070914;
+    --card:rgba(255,255,255,.07);
+    --card2:rgba(255,255,255,.04);
+    --text:#ffffff;
+    --muted:#a7adc4;
+    --border:rgba(255,255,255,.12);
+    --success:#27e28b;
+    --danger:#ff5577;
+    --shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(108,99,255,.18),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(0,212,255,.10),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,input,select,textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#070914;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.6s;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-logo{
+    width:70px;
+    height:70px;
+    border-radius:22px;
+    display:grid;
+    place-items:center;
+    margin:auto;
+    font-size:30px;
+    font-weight:800;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    box-shadow:0 0 50px rgba(108,99,255,.5);
+    animation:pulse 1.5s infinite;
+}
+
+.loader-box p{
+    margin-top:18px;
+    color:var(--muted);
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 6%;
+    backdrop-filter:blur(20px);
+    background:rgba(7,9,20,.68);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:Poppins;
+    font-size:22px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    box-shadow:0 8px 30px rgba(108,99,255,.3);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#c7cad8;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-btn{
+    padding:12px 18px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    color:white!important;
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    max-width:1250px;
+    margin:auto;
+    padding:150px 6% 90px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:60px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 14px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:100px;
+    color:#d7d9e6;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.badge span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--success);
+    box-shadow:0 0 15px var(--success);
+}
+
+.hero h1{
+    font-family:Poppins;
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.02;
+    letter-spacing:-3px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#fff,var(--accent),#9d8cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:620px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+    margin:25px 0 30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:15px 22px;
+    border-radius:14px;
+    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    font-weight:700;
+    box-shadow:0 15px 35px rgba(108,99,255,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 45px rgba(108,99,255,.4);
+}
+
+.btn-outline{
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:none;
+}
+
+/* Hero visual */
+
+.hero-visual{
+    position:relative;
+    min-height:470px;
+    display:grid;
+    place-items:center;
+}
+
+.glow{
+    position:absolute;
+    width:330px;
+    height:330px;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    filter:blur(100px);
+    opacity:.25;
+}
+
+.learning-card{
+    position:relative;
+    width:min(390px,100%);
+    padding:30px;
+    border-radius:28px;
+    background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04));
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(20px);
+    transform:rotate(2deg);
+}
+
+.learning-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.avatar{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#7c6cff,#00d4ff);
+    font-size:23px;
+    font-weight:800;
+}
+
+.live{
+    color:#55efaa;
+    background:rgba(39,226,139,.1);
+    border:1px solid rgba(39,226,139,.2);
+    padding:7px 10px;
+    border-radius:30px;
+    font-size:12px;
+}
+
+.progress{
+    margin-top:30px;
+}
+
+.progress-line{
+    height:8px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress-line div{
+    width:78%;
+    height:100%;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    border-radius:20px;
+}
+
+.stats-mini{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:25px;
+}
+
+.stat-mini{
+    background:rgba(255,255,255,.05);
+    padding:14px;
+    border-radius:14px;
+    text-align:center;
+}
+
+.stat-mini strong{
+    display:block;
+    font-size:18px;
+}
+
+.stat-mini span{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:100px 6%;
+}
+
+.section-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--accent);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-family:Poppins;
+    font-size:clamp(32px,4vw,48px);
+    margin-top:10px;
+}
+
+.section-title p{
+    max-width:650px;
+    color:var(--muted);
+    margin:15px auto 0;
+    line-height:1.7;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    padding:30px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:20px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:34px;
+    font-family:Poppins;
+}
+
+.stat p{
+    color:var(--muted);
+    margin-top:7px;
+}
+
+/* =========================
+   COURSES
+========================= */
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.course{
+    padding:30px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:24px;
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.course:hover{
+    transform:translateY(-8px);
+    border-color:rgba(139,92,246,.5);
+}
+
+.course-icon{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    background:rgba(108,99,255,.13);
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.course h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.course p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.course ul{
+    list-style:none;
+    margin:20px 0;
+}
+
+.course li{
+    margin:10px 0;
+    color:#d4d7e5;
+}
+
+.course li::before{
+    content:"✓";
+    color:var(--success);
+    margin-right:10px;
+}
+
+/* =========================
+   TUTORS
+========================= */
+
+.tutor-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.tutor{
+    position:relative;
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:28px;
+    background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+    overflow:hidden;
+    transition:.35s;
+}
+
+.tutor:hover{
+    transform:translateY(-7px);
+}
+
+.tutor-top{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.tutor-avatar{
+    width:90px;
+    height:90px;
+    border-radius:25px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    font-size:31px;
+    font-weight:800;
+}
+
+.tutor h3{
+    font-size:24px;
+}
+
+.verified{
+    display:inline-block;
+    margin-top:7px;
+    color:#63e6be;
+    font-size:13px;
+}
+
+.tutor p{
+    color:var(--muted);
+    line-height:1.7;
+    margin:20px 0;
+}
+
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.tag{
+    padding:8px 11px;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--border);
+    border-radius:9px;
+    font-size:12px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.price-card{
+    padding:32px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:25px;
+}
+
+.price-card.featured{
+    border-color:var(--primary);
+    box-shadow:0 20px 70px rgba(108,99,255,.18);
+    transform:scale(1.03);
+}
+
+.popular{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    padding:7px 11px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:38px;
+    font-weight:800;
+    margin:15px 0;
+}
+
+.price small{
+    font-size:13px;
+    color:var(--muted);
+}
+
+.price-card p{
+    color:var(--muted);
+}
+
+.price-card ul{
+    list-style:none;
+    margin:25px 0;
+}
+
+.price-card li{
+    margin:13px 0;
+    color:#d8dbea;
+}
+
+.price-card li::before{
+    content:"✓";
+    color:var(--success);
+    margin-right:10px;
+}
+
+/* =========================
+   TRIAL
+========================= */
+
+.trial{
+    border-radius:35px;
+    padding:65px;
+    background:
+      radial-gradient(circle at 10% 20%,rgba(0,212,255,.18),transparent 30%),
+      radial-gradient(circle at 90% 80%,rgba(108,99,255,.25),transparent 35%),
+      rgba(255,255,255,.05);
+    border:1px solid var(--border);
+    text-align:center;
+}
+
+.trial h2{
+    font-family:Poppins;
+    font-size:42px;
+}
+
+.trial p{
+    max-width:650px;
+    margin:15px auto 25px;
+    color:var(--muted);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-box{
+    max-width:850px;
+    margin:auto;
+    padding:35px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:25px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    font-size:13px;
+    color:#cbd0df;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    outline:none;
+    background:rgba(0,0,0,.2);
+    color:white;
+}
+
+.field select option{
+    background:#11131e;
+}
+
+.field textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:15px;
+    margin-bottom:12px;
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+    background:none;
+    color:white;
+    border:none;
+    padding:20px;
+    text-align:left;
+    display:flex;
+    justify-content:space-between;
+    font-weight:700;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 20px 20px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:60px 6% 30px;
+    border-top:1px solid var(--border);
+    background:rgba(0,0,0,.2);
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-col h3{
+    margin-bottom:18px;
+}
+
+.footer-col p,
+.footer-col a{
+    color:var(--muted);
+    line-height:2;
+    display:block;
+    font-size:14px;
+}
+
+.copyright{
+    max-width:1250px;
+    margin:40px auto 0;
+    padding-top:25px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:13px;
+    text-align:center;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    display:none;
+    place-items:center;
+    padding:20px;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(8px);
+}
+
+.modal.active{
+    display:grid;
+}
+
+.modal-box{
+    width:min(550px,100%);
+    padding:30px;
+    border-radius:25px;
+    background:#101321;
+    border:1px solid var(--border);
+    position:relative;
+    box-shadow:var(--shadow);
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    color:white;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+#toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:8000;
+    background:#171a29;
+    border:1px solid var(--border);
+    padding:15px 20px;
+    border-radius:14px;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.35s;
+}
+
+#toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:5%;
+        width:90%;
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        border:1px solid var(--border);
+        border-radius:20px;
+        background:#0d101d;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .stats,
+    .course-grid,
+    .pricing{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:75px 5%;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .stats,
+    .course-grid,
+    .tutor-grid,
+    .pricing,
+    .form-grid,
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.featured{
+        transform:none;
+    }
+
+    .trial{
+        padding:40px 20px;
+    }
+
+    .trial h2{
+        font-size:32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+    <div class="loader-box">
+        <div class="loader-logo">TE</div>
+        <p>Loading The Education...</p>
+    </div>
+</div>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-inner">
+
+<a href="#home" class="logo">
+    <div class="logo-icon">TE</div>
+    The Education
+</a>
+
+<nav class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#tutors">Tutors</a>
+    <a href="#pricing">Plans</a>
+    <a href="#trial">Free Trial</a>
+    <a href="#register" class="nav-btn">Join Now</a>
+</nav>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<main id="home">
+
+<section class="hero">
+
+<div>
+
+<div class="badge">
+    <span></span>
+    New Generation Online Learning
+</div>
+
+<h1>
+    Learn Better.<br>
+    <span class="gradient-text">Grow Faster.</span>
+</h1>
+
+<p>
+    Welcome to The Education — a modern online learning platform
+    where students learn with expert tutors through personalized,
+    interactive and flexible classes.
+</p>
+
+<div class="hero-buttons">
+    <a href="#trial" class="btn">🎓 Book Free Trial</a>
+    <a href="#courses" class="btn btn-outline">Explore Courses →</a>
+</div>
+
+</div>
+
+
+<div class="hero-visual">
+
+<div class="glow"></div>
+
+<div class="learning-card">
+
+<div class="learning-top">
+
+<div>
+<div class="avatar">TE</div>
+</div>
+
+<div class="live">● Online Learning</div>
+
+</div>
+
+<h3 style="margin-top:25px;font-size:24px">
+Your Learning Journey
+</h3>
+
+<p style="color:var(--muted);margin-top:8px">
+Personalized classes with expert tutors.
+</p>
+
+<div class="progress">
+
+<div style="display:flex;justify-content:space-between">
+<span>Learning Progress</span>
+<strong>78%</strong>
+</div>
+
+<div class="progress-line">
+<div></div>
+</div>
+
+</div>
+
+<div class="stats-mini">
+
+<div class="stat-mini">
+<strong>2</strong>
+<span>Expert Tutors</span>
+</div>
+
+<div class="stat-mini">
+<strong>1:1</strong>
+<span>Classes</span>
+</div>
+
+<div class="stat-mini">
+<strong>24/7</strong>
+<span>Support</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+<div class="section-inner">
+
+<div class="stats">
+
+<div class="stat">
+<h3>2+</h3>
+<p>Expert Tutors</p>
+</div>
+
+<div class="stat">
+<h3>1:1</h3>
+<p>Personal Classes</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Online Learning</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Access</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<div class="section-inner">
+
+<div class="section-title">
+<span>Our Programs</span>
+<h2>Courses Designed For You</h2>
+<p>
+Choose a learning path that matches your goals and study with
+personal attention from your tutor.
+</p>
+</div>
+
+<div class="course-grid">
+
+<div class="course">
+<div class="course-icon">📚</div>
+<h3>Academic Classes</h3>
+<p>Improve your school subjects with structured online lessons.</p>
+
+<ul>
+<li>Personal attention</li>
+<li>Concept building</li>
+<li>Homework support</li>
+<li>Test preparation</li>
+</ul>
+
+<button class="btn" onclick="openTrial('Academic Classes')">
+Start Learning
+</button>
+</div>
+
+
+<div class="course">
+<div class="course-icon">🧠</div>
+<h3>Concept Mastery</h3>
+<p>Understand difficult topics instead of simply memorizing them.</p>
+
+<ul>
+<li>Step-by-step lessons</li>
+<li>Practice questions</li>
+<li>Progress tracking</li>
+<li>Revision sessions</li>
+</ul>
+
+<button class="btn" onclick="openTrial('Concept Mastery')">
+Start Learning
+</button>
+</div>
+
+
+<div class="course">
+<div class="course-icon">🏆</div>
+<h3>Exam Preparation</h3>
+<p>Prepare for tests and examinations with focused practice.</p>
+
+<ul>
+<li>Important topics</li>
+<li>Mock tests</li>
+<li>MCQs</li>
+<li>Exam strategies</li>
+</ul>
+
+<button class="btn" onclick="openTrial('Exam Preparation')">
+Start Learning
+</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TUTORS -->
+
+<section id="tutors">
+
+<div class="section-inner">
+
+<div class="section-title">
+<span>Meet Our Tutors</span>
+<h2>Learn With The Right Tutor</h2>
+<p>
+Two dedicated tutors ready to help students understand,
+practice and improve.
+</p>
+</div>
+
+<div class="tutor-grid">
+
+
+<div class="tutor">
+
+<div class="tutor-top">
+
+<div class="tutor-avatar">AS</div>
+
+<div>
+<h3>Abdullah Shahzad</h3>
+<div class="verified">✓ Verified Tutor</div>
+</div>
+
+</div>
+
+<p>
+Abdullah Shahzad provides friendly and structured lessons
+with a focus on understanding concepts and helping students
+progress step by step.
+</p>
+
+<div class="tags">
+<span class="tag">Academic</span>
+<span class="tag">Concepts</span>
+<span class="tag">Exam Prep</span>
+</div>
+
+<br>
+
+<button class="btn" onclick="selectTutor('Abdullah Shahzad')">
+Choose Abdullah
+</button>
+
+</div>
+
+
+<div class="tutor">
+
+<div class="tutor-top">
+
+<div class="tutor-avatar">UA</div>
+
+<div>
+<h3>Uzair Amad</h3>
+<div class="verified">✓ Verified Tutor</div>
+</div>
+
+</div>
+
+<p>
+Uzair Amad helps students learn through clear explanations,
+practice and interactive lessons designed around their needs.
+</p>
+
+<div class="tags">
+<span class="tag">Academic</span>
+<span class="tag">Practice</span>
+<span class="tag">Revision</span>
+</div>
+
+<br>
+
+<button class="btn" onclick="selectTutor('Uzair Amad')">
+Choose Uzair
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+<div class="section-inner">
+
+<div class="section-title">
+<span>Simple Plans</span>
+<h2>Choose Your Learning Plan</h2>
+<p>
+Flexible options for students who want consistent progress.
+</p>
+</div>
+
+<div class="pricing">
+
+<div class="price-card">
+
+<h3>Starter</h3>
+
+<div class="price">
+Rs. 2,500 <small>/ month</small>
+</div>
+
+<p>For students starting their learning journey.</p>
+
+<ul>
+<li>2 classes / week</li>
+<li>Personal tutor</li>
+<li>Basic progress tracking</li>
+<li>Homework support</li>
+</ul>
+
+<button class="btn" onclick="openTrial('Starter')">
+Get Started
+</button>
+
+</div>
+
+
+<div class="price-card featured">
+
+<div class="popular">MOST POPULAR</div>
+
+<h3>Standard</h3>
+
+<div class="price">
+Rs. 4,500 <small>/ month</small>
+</div>
+
+<p>A balanced plan for regular students.</p>
+
+<ul>
+<li>4 classes / week</li>
+<li>Personal tutor</li>
+<li>Progress tracking</li>
+<li>Practice sessions</li>
+<li>Priority support</li>
+</ul>
+
+<button class="btn" onclick="openTrial('Standard')">
+Choose Standard
+</button>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Premium</h3>
+
+<div class="price">
+Rs. 6,500 <small>/ month</small>
+</div>
+
+<p>For students wanting intensive learning.</p>
+
+<ul>
+<li>6 classes / week</li>
+<li>Personal tutor</li>
+<li>Advanced practice</li>
+<li>Exam preparation</li>
+<li>Priority support</li>
+</ul>
+
+<button class="btn" onclick="openTrial('Premium')">
+Go Premium
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FREE TRIAL -->
+
+<section id="trial">
+
+<div class="section-inner">
+
+<div class="trial">
+
+<h2>🎓 Try Your First Class Free</h2>
+
+<p>
+Not sure which tutor is right for you?
+Book a free trial class and experience The Education yourself.
+</p>
+
+<button class="btn" onclick="openTrial('Free Trial')">
+Book Free Trial →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REGISTER -->
+
+<section id="register">
+
+<div class="section-inner">
+
+<div class="section-title">
+<span>Registration</span>
+<h2>Start Your Learning Journey</h2>
+<p>
+Fill in your details and our team can contact you about your classes.
+</p>
+</div>
+
+
+<div class="form-box">
+
+<form id="registrationForm">
+
+<div class="form-grid">
+
+<div class="field">
+<label>Student Name</label>
+<input id="studentName" required placeholder="Enter student name">
+</div>
+
+<div class="field">
+<label>Father / Guardian Name</label>
+<input id="fatherName" required placeholder="Enter father or guardian name">
+</div>
+
+<div class="field">
+<label>Age</label>
+<input id="age" type="number" required placeholder="Age">
+</div>
+
+<div class="field">
+<label>School / Institute</label>
+<input id="school" placeholder="School name">
+</div>
+
+<div class="field">
+<label>Course</label>
+<select id="course">
+<option>Academic Classes</option>
+<option>Concept Mastery</option>
+<option>Exam Preparation</option>
+</select>
+</div>
+
+<div class="field">
+<label>Preferred Tutor</label>
+<select id="tutor">
+<option>Abdullah Shahzad</option>
+<option>Uzair Amad</option>
+</select>
+</div>
+
+<div class="field full">
+<label>Phone Number</label>
+<input id="phone" required placeholder="+92">
+</div>
+
+<div class="field full">
+<label>Message</label>
+<textarea id="message" placeholder="Tell us what you want to learn..."></textarea>
+</div>
+
+</div>
+
+<br>
+
+<button class="btn" type="submit">
+🚀 Submit Registration
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+<div class="section-inner">
+
+<div class="section-title">
+<span>FAQ</span>
+<h2>Frequently Asked Questions</h2>
+</div>
+
+<div class="faq">
+
+<div class="faq-item">
+<button class="faq-question">
+How does the free trial work?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Choose a tutor and book your free trial. The academy can then contact
+you to arrange the class details.
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+Can I choose my tutor?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Yes. You can select Abdullah Shahzad or Uzair Amad during registration.
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+Are classes online?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Yes. The Education is designed as an online learning platform so
+students can learn from home.
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+Can I change my course later?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Course changes can be discussed with the academy according to the
+student's learning requirements.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-col">
+
+<div class="logo">
+<div class="logo-icon">TE</div>
+The Education
+</div>
+
+<br>
+
+<p>
+Modern online education designed around students,
+personal learning and real progress.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Platform</h3>
+
+<a href="#courses">Courses</a>
+<a href="#tutors">Tutors</a>
+<a href="#pricing">Plans</a>
+<a href="#trial">Free Trial</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Learning</h3>
+
+<a href="#register">Registration</a>
+<a href="#courses">Academic</a>
+<a href="#courses">Concept Mastery</a>
+<a href="#courses">Exam Prep</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Support</h3>
+
+<a href="#register">Contact</a>
+<a href="#trial">Book Trial</a>
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 The Education. All rights reserved.
+</div>
+
+</footer>
+
+
+<!-- TRIAL MODAL -->
+
+<div class="modal" id="trialModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal()">×</button>
+
+<h2>🎓 Book Your Trial</h2>
+
+<p style="color:var(--muted);margin:10px 0 25px">
+Choose your preferred tutor and submit your details.
+</p>
+
+<form id="trialForm">
+
+<div class="field">
+<label>Student Name</label>
+<input id="trialName" required placeholder="Student name">
+</div>
+
+<br>
+
+<div class="field">
+<label>Choose Tutor</label>
+
+<select id="trialTutor">
+
+<option>Abdullah Shahzad</option>
+<option>Uzair Amad</option>
+
+</select>
+
+</div>
+
+<br>
+
+<div class="field">
+<label>Phone Number</label>
+<input id="trialPhone" required placeholder="+92">
+</div>
+
+<br>
+
+<button class="btn" type="submit">
+Book Free Trial
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+
+<script>
+
+/* =========================
+   LOADER
+========================= */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},600);
+
+},700);
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+document.getElementById("navLinks").classList.toggle("open");
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function toast(message){
+
+const t=document.getElementById("toast");
+
+t.textContent=message;
+
+t.classList.add("show");
+
+setTimeout(()=>{
+t.classList.remove("show");
+},3500);
+
+}
+
+
+/* =========================
+   TRIAL
+========================= */
+
+function openTrial(course){
+
+document.getElementById("trialModal").classList.add("active");
+
+toast(course+" selected");
+
+}
+
+function closeModal(){
+
+document.getElementById("trialModal").classList.remove("active");
+
+}
+
+
+/* =========================
+   SELECT TUTOR
+========================= */
+
+function selectTutor(name){
+
+document.getElementById("tutor").value=name;
+
+document.getElementById("register").scrollIntoView({
+behavior:"smooth"
+});
+
+toast(name+" selected as your tutor");
+
+}
+
+
+/* =========================
+   REGISTRATION
+========================= */
+
+document.getElementById("registrationForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("studentName").value;
+
+toast(
+"Registration submitted successfully. Welcome "+name+"!"
+);
+
+this.reset();
+
+});
+
+
+/* =========================
+   TRIAL FORM
+========================= */
+
+document.getElementById("trialForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("trialName").value;
+const tutor=document.getElementById("trialTutor").value;
+
+closeModal();
+
+toast(
+"Free trial request sent for "+name+" with "+tutor+"!"
+);
+
+this.reset();
+
+});
+
+
+/* =========================
+   FAQ
+========================= */
+
+document.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const item=button.parentElement;
+
+item.classList.toggle("active");
+
+const icon=button.querySelector("span");
+
+icon.textContent=
+item.classList.contains("active") ? "−" : "+";
+
+});
+
+});
+
+
+/* =========================
+   CLOSE MODAL OUTSIDE
+========================= */
+
+document.getElementById("trialModal")
+.addEventListener("click",function(e){
+
+if(e.target===this){
+closeModal();
+}
+
+});
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+closeModal();
+}
+
+});
+
+</script>
+
+</body>
+</html>
